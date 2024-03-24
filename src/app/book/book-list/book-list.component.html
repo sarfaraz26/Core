@@ -1,0 +1,27 @@
+<h4 class="text-danger mb-3">Books</h4>
+
+<table class="table table-bordered">
+    <tr>
+        <th scope="col">Title</th>
+        <th scope="col">Description</th>
+        <th scope="col">Price</th>
+        <th scope="col">PublishedDate</th>
+        <th scope="col">Published</th>
+        <th scope="col">Author</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+    </tr>
+    <tr *ngFor="let book of books">
+        <td>{{book.title}}</td>
+        <td>{{book.description}}</td>
+        <td>{{book.price}}</td>
+        <td>{{book.publishedDate | date : 'dd/MM/yyyy'}}</td>
+        <td><input type="checkbox" name="isPublished" id="isPublished" [checked]="book.isPublished" disabled></td>
+        <td>Sarfaraz</td>
+        <td><a href="" class="text-warning">Edit</a></td>
+        <td><a href="" class="text-danger">Delete</a></td>
+    </tr>
+
+</table>
+
+<a routerLink="/api/add/book">Add Book</a>

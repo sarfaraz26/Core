@@ -1,0 +1,18 @@
+<h4 class="text-danger mb-3">Authors</h4>
+
+<table class="table table-bordered">
+    <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Age</th>
+        <th scope="col">Address</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+    </tr>
+    <tr *ngFor="let author of authors" (click)="PopulateRecord(author)">
+        <td>{{author.authorName}}</td>
+        <td>{{author.age}}</td>
+        <td>{{author.address}}</td>
+    </tr>
+</table>
+
+<a routerLink="/api/add/author">Add Author</a>

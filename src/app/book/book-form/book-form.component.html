@@ -1,0 +1,31 @@
+<h4 class="text-danger mb-3">Add Book</h4>
+
+<form>
+    <input type="text" name="book-title" id="book-title" class="form-control mb-2 w-50" placeholder="Enter Title...">
+    
+    <input type="text" name="book-description" id="book-description" class="form-control mb-2 w-50" placeholder="Enter Description...">
+    
+    <input type="number" name="book-price" id="book-price" class="form-control mb-3 w-50" placeholder="Enter Price...">
+    
+    <h6>Enter Publication date</h6>
+    <input type="date" name="book-date" id="book-date" class="form-control mb-3 w-50">
+    
+    <div class="form-check mb-3">
+        <input class="form-check-input" type="checkbox">
+        <label class="form-check-label" for="flexCheckDefault">
+          <b>Published</b>
+        </label>
+    </div>
+
+    <h6>Select Author</h6>
+    <select class="form-control mb-3 w-50">
+        <option value="guid">Sarfaraz</option>
+        <option value="guid">Mayana</option>
+        <option value="guid">Salman</option>
+    </select>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+</form>
+
+<br>
+<a routerLink="/api/books">View Books</a>

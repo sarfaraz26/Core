@@ -1,0 +1,20 @@
+<h4 class="text-danger mb-3">Add Author</h4>
+
+<div *ngIf="isVisible" [ngClass]="[this.authorService.toggleMsg ? 'alert alert-success w-50' : 'alert alert-warning w-50']">
+    {{this.authorService.toggleMsg ? "Added" : "Deleted"}}
+</div>
+
+<div *ngIf="this.authorService.isUpdateDivVisible" class="alert alert-secondary w-50">
+    Updated
+</div>
+
+<form #form="ngForm"  (ngSubmit)="submitRequest(form)">
+    <input type="text" name="author-name" id="author-name" class="form-control mb-2 w-50" placeholder="Enter Name..." [(ngModel)]="this.authorService.authorForm.authorName">
+    <input type="number" name="author-age" id="author-age" class="form-control mb-2 w-50" placeholder="Enter Age..."  [(ngModel)]="this.authorService.authorForm.age">
+    <input type="text" name="author-address" id="author-address" class="form-control mb-2 w-50" placeholder="Enter Address..."  [(ngModel)]="this.authorService.authorForm.address">
+    <button type="submit" class="btn btn-sm btn-success">{{this.authorService.isSubmit ? 'Submit' : 'Update'}}</button>
+    <button type="button" *ngIf="this.authorService.isDeleteVisible" class="btn btn-sm btn-danger mx-2" (click)="deleteAuthor(form)">Delete</button>
+</form>
+
+<br>
+<a routerLink="/api/authors">View Authors</a>
